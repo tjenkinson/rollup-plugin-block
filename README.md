@@ -4,7 +4,7 @@
 
 Ensure certain files don't become part of the build.
 
-## Why
+## Why?
 
 Sometimes you want to have separate builds for dev and production. You might use the [`replace`](https://github.com/rollup/rollup-plugin-replace) plugin to conditionally import certain files. This plugin lets you make sure that a file that is meant for one build isn't accidentally compiled into another.
 
