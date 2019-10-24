@@ -1,4 +1,4 @@
-export default ({ blockPattern }) => {
+module.exports = ({ blockPattern }) => {
   if (!(blockPattern instanceof RegExp || typeof blockPattern === 'string')) {
     throw new Error("'blockPattern' should be a string or regular expression.");
   }
@@ -12,12 +12,12 @@ export default ({ blockPattern }) => {
     name: 'rollup-plugin-block',
     writeBundle(bundle) {
       for (const fileName in bundle) {
-        for (const moduleFilename in bundle[fileName].modules) {
+        for (const moduleFileName in bundle[fileName].modules) {
           if (
-            bundle[fileName].modules[moduleFilename].renderedExports.length &&
-            shouldBlock(fileName)
+            bundle[fileName].modules[moduleFileName].renderedExports.length &&
+            shouldBlock(moduleFileName)
           ) {
-            this.error(`"${moduleFilename}" included in bundle "${fileName}".`);
+            this.error(`"${moduleFileName}" included in bundle "${fileName}".`);
           }
         }
       }
