@@ -22,7 +22,7 @@
     "import"
   ],
   "author": "Tom Jenkinson <tom@tjenkinson.me>",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tjenkinson/rollup-plugin-block/issues"
   },
