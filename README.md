@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/rollup-plugin-block.svg)](https://badge.fury.io/js/rollup-plugin-block)
+
 # rollup-plugin-block
 
 Ensure certain files don't become part of the build.
