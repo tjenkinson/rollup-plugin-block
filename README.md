@@ -62,7 +62,7 @@ import { rollup } from 'rollup';
 import rollupPluginBlock from 'rollup-plugin-block';
 
 export default {
-  entry: 'main.js',
+  input: 'main.js',
   plugins: [
     rollupPluginBlock({
       blockPattern: '.devonly.' // or regex
