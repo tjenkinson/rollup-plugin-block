@@ -14,7 +14,7 @@ module.exports = ({ blockPattern }) => {
       for (const fileName in bundle) {
         for (const moduleFileName in bundle[fileName].modules) {
           if (
-            bundle[fileName].modules[moduleFileName].renderedExports.length &&
+            bundle[fileName].modules[moduleFileName].renderedLength &&
             shouldBlock(moduleFileName)
           ) {
             this.error(`"${moduleFileName}" included in bundle "${fileName}".`);
