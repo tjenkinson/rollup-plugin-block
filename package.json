@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-block",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Ensure certain files don't become part of the build.",
   "main": "src/rollup-plugin-block.js",
   "scripts": {
