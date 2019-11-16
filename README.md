@@ -37,7 +37,7 @@ import rollupPluginBlock from 'rollup-plugin-block';
 import replace from 'rollup-plugin-replace';
 
 export default {
-  entry: 'main.js',
+  input: 'main.js',
   plugins: [
     replace({
       __DEV_MODE__: JSON.stringify(!!process.env.DEV_BUILD)
