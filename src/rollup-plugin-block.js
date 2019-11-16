@@ -10,7 +10,7 @@ module.exports = ({ blockPattern }) => {
   };
   return {
     name: 'rollup-plugin-block',
-    writeBundle(bundle) {
+    generateBundle(_, bundle) {
       for (const fileName in bundle) {
         for (const moduleFileName in bundle[fileName].modules) {
           if (
