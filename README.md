@@ -46,7 +46,7 @@ export default {
       blockPattern: '.devonly.'
     })
   ]
-});
+};
 ```
 
 ## Installation
