@@ -12,6 +12,9 @@ module.exports = ({ blockPattern }) => {
     name: 'rollup-plugin-block',
     generateBundle(_, bundle) {
       for (const fileName in bundle) {
+        if (bundle[fileName].type !== 'chunk') {
+          continue;
+        }
         for (const moduleFileName in bundle[fileName].modules) {
           if (
             bundle[fileName].modules[moduleFileName].renderedLength &&
