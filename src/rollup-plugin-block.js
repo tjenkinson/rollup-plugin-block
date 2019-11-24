@@ -1,10 +1,10 @@
-module.exports = ({ blockPattern }) => {
+module.exports = ({ blockPattern } = {}) => {
   if (!(blockPattern instanceof RegExp || typeof blockPattern === 'string')) {
     throw new Error("'blockPattern' should be a string or regular expression.");
   }
   const shouldBlock = fileName => {
     if (blockPattern instanceof RegExp) {
-      return fileName.test(blockPattern);
+      return blockPattern.test(fileName);
     }
     return fileName.includes(blockPattern);
   };
@@ -20,7 +20,9 @@ module.exports = ({ blockPattern }) => {
             bundle[fileName].modules[moduleFileName].renderedLength &&
             shouldBlock(moduleFileName)
           ) {
-            this.error(`"${moduleFileName}" included in bundle "${fileName}".`);
+            this.error(
+              new Error(`"${moduleFileName}" included in bundle "${fileName}".`)
+            );
           }
         }
       }
