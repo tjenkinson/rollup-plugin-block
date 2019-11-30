@@ -59,7 +59,7 @@ npm install --save-dev rollup-plugin-block
 
 ```js
 import { rollup } from 'rollup';
-import rollupPluginBlock from 'rollup-plugin-block';
+const rollupPluginBlock = require('rollup-plugin-block');
 
 export default {
   input: 'main.js',
