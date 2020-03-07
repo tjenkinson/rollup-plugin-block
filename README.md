@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/rollup-plugin-block.svg)](https://badge.fury.io/js/rollup-plugin-block) [![Greenkeeper badge](https://badges.greenkeeper.io/tjenkinson/rollup-plugin-block.svg)](https://greenkeeper.io/)
+[![npm version](https://badge.fury.io/js/rollup-plugin-block.svg)](https://badge.fury.io/js/rollup-plugin-block)
 
 # rollup-plugin-block
 
