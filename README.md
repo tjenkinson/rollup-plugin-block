@@ -26,7 +26,7 @@ if (__DEV_MODE__) {
 
 ```js
 export const debugLogger = {
-  log: msg => console.log(msg)
+  log: (msg) => console.log(msg),
 };
 ```
 
@@ -40,12 +40,12 @@ export default {
   input: 'main.js',
   plugins: [
     replace({
-      __DEV_MODE__: JSON.stringify(!!process.env.DEV_BUILD)
+      __DEV_MODE__: JSON.stringify(!!process.env.DEV_BUILD),
     }),
     rollupPluginBlock({
-      blockPattern: '.devonly.'
-    })
-  ]
+      blockPattern: '.devonly.',
+    }),
+  ],
 };
 ```
 
