@@ -2,7 +2,7 @@ module.exports = ({ blockPattern } = {}) => {
   if (!(blockPattern instanceof RegExp || typeof blockPattern === 'string')) {
     throw new Error("'blockPattern' should be a string or regular expression.");
   }
-  const shouldBlock = fileName => {
+  const shouldBlock = (fileName) => {
     if (blockPattern instanceof RegExp) {
       return blockPattern.test(fileName);
     }
@@ -26,6 +26,6 @@ module.exports = ({ blockPattern } = {}) => {
           }
         }
       }
-    }
+    },
   };
 };

@@ -16,25 +16,25 @@ function buildFakeFile(id, contents) {
         return contents;
       }
       return null;
-    }
+    },
   };
 }
 
 async function doBuild({ config, files }) {
   const bundle = await rollup.rollup({
     input: entryFile,
-    onwarn: e => {
+    onwarn: (e) => {
       throw new Error(e);
     },
     plugins: [
       RollupPluginBlock(config),
-      ...Object.keys(files).map(fileName =>
+      ...Object.keys(files).map((fileName) =>
         buildFakeFile(
           fileName,
           files[fileName] + `\nconsole.log("${fileName}")`
         )
-      )
-    ]
+      ),
+    ],
   });
   return bundle.generate({ format: 'cjs' });
 }
@@ -48,25 +48,25 @@ describe('RollupPluginBlock', () => {
           [entryFile]: `
           import 'a';
         `,
-          a: ``
-        }
+          a: ``,
+        },
       })
     ).rejects.toMatchObject({
-      message: `'blockPattern' should be a string or regular expression.`
+      message: `'blockPattern' should be a string or regular expression.`,
     });
   });
 
   it('case 2', async () => {
     await doBuild({
       config: {
-        blockPattern: 'block'
+        blockPattern: 'block',
       },
       files: {
         [entryFile]: `
           import 'a';
         `,
-        a: ``
-      }
+        a: ``,
+      },
     });
   });
 
@@ -74,7 +74,7 @@ describe('RollupPluginBlock', () => {
     await expect(
       doBuild({
         config: {
-          blockPattern: '_block_'
+          blockPattern: '_block_',
         },
         files: {
           [entryFile]: `
@@ -83,11 +83,11 @@ describe('RollupPluginBlock', () => {
           test: `
             import '_block_';
           `,
-          _block_: ``
-        }
+          _block_: ``,
+        },
       })
     ).rejects.toMatchObject({
-      message: `"_block_" included in bundle "entry.js".`
+      message: `"_block_" included in bundle "entry.js".`,
     });
   });
 
@@ -95,7 +95,7 @@ describe('RollupPluginBlock', () => {
     await expect(
       doBuild({
         config: {
-          blockPattern: /_block_/
+          blockPattern: /_block_/,
         },
         files: {
           [entryFile]: `
@@ -104,11 +104,11 @@ describe('RollupPluginBlock', () => {
           test: `
             import '_block_';
           `,
-          _block_: ``
-        }
+          _block_: ``,
+        },
       })
     ).rejects.toMatchObject({
-      message: `"_block_" included in bundle "entry.js".`
+      message: `"_block_" included in bundle "entry.js".`,
     });
   });
 });
