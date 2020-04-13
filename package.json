@@ -4,8 +4,8 @@
   "description": "Ensure certain files don't become part of the build.",
   "main": "src/rollup-plugin-block.js",
   "scripts": {
-    "prettier": "prettier --write **/*.{js,md}",
-    "lint": "prettier --check **/*.{js,md}",
+    "prettier": "prettier --write .",
+    "lint": "prettier --check .",
     "test": "jest"
   },
   "husky": {
