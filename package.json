@@ -31,7 +31,7 @@
   "homepage": "https://github.com/tjenkinson/rollup-plugin-block#readme",
   "devDependencies": {
     "@types/jest": "^26.0.10",
-    "husky": "^4.0.2",
+    "husky": "^8.0.3",
     "jest": "^26.4.2",
     "prettier": "^2.0.2",
     "rollup": "^2.0.2"
